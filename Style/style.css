@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    background-color: darkblue;
+}
+
+.memory-game{
+    width: 900px;
+    height: 900px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.memory-card{
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px black (0,0,0,.3);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+
+}
+
+.memory-card.flip{
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background-color: palegreen;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+  }
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+  }
+
+.memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+#overlay {
+    position: fixed; 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:  rgba(0, 0, 0, 0.8); /*opacity*/
+    z-index: 2; /* Specify a stack order in case using a different order for other elements?? */
+    cursor: pointer; 
+  }
+
+#restartScreen{
+    font-size: xx-large;
+    color: lightgreen;
+    text-align: center;
+    padding-top: 100px;
+}
+
+button{
+    padding: 5px;
+    color: green;
+    
+}
